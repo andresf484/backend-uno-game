@@ -21,7 +21,8 @@ export class RoomManager {
 
   addPlayerToRoom(roomId, player) {
     const room = this.rooms.get(roomId);
-    if (room && room.players.length < 4) {
+    //if (room && room.players.length < 4) {
+    if (room && room.players.length < process.env.QTY_PLAYERS) {
       room.players.push(player);
     }
   }

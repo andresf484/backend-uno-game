@@ -33,7 +33,8 @@ io.on('connection', (socket) => {
       return;
     }
 
-    if (room.players.length >= 4) {
+    //if (room.players.length >= 4) {
+    if (room.players.length >= process.env.QTY_PLAYERS) {
       socket.emit('error', 'Room is full');
       return;
     }
